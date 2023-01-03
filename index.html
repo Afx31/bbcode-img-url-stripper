@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BBCode Img Url Stripper</title>
+  </head>
+  <body>  
+    <label for="inputBox">Input:</label>
+    <input type="text" id="inputBox" name="inputBox"><br><br>
+    <label for="outputBox">Output:</label>
+    <input type="text" id="outputBox" name="outputBox" style="width: 400px"><br><br>
+    <button onclick="inputFunction()">Convert</button>
+
+    <script>
+      function inputFunction() {
+        let inputStr = document.getElementById('inputBox').value;
+          document.getElementById('outputBox').value = inputStr.substring(
+            inputStr.indexOf("[img]") + 5,
+            inputStr.lastIndexOf("[/img]")
+          );
+      }
+    </script>
+  </body>
+</html>
