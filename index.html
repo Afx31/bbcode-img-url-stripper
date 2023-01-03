@@ -3,20 +3,45 @@
   <head>
     <title>BBCode Img Url Stripper</title>
   </head>
-  <body>  
+  <style>
+    body {
+      background-color: #686868;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    input {
+      padding: .2rem;
+      width: 400px
+    }
+
+    .inputBox {
+      margin-left: 13px;
+    }
+  </style>
+  <body>
     <label for="inputBox">Input:</label>
-    <input type="text" id="inputBox" name="inputBox"><br><br>
+    <input id="inputBox" name="inputBox" type="text" onClick="selectAll()" onpaste="inputFunction()" class="inputBox">
+    <br><br>
     <label for="outputBox">Output:</label>
-    <input type="text" id="outputBox" name="outputBox" style="width: 400px"><br><br>
-    <button onclick="inputFunction()">Convert</button>
+    <input id="outputBox" name="outputBox" type="text" onClick="copyOutputFunction()"><br><br>
 
     <script>
       function inputFunction() {
-        let inputStr = document.getElementById('inputBox').value;
+        setTimeout(() => {
+          let inputStr = document.getElementById('inputBox').value;
           document.getElementById('outputBox').value = inputStr.substring(
-            inputStr.indexOf("[img]") + 5,
-            inputStr.lastIndexOf("[/img]")
+            inputStr.indexOf('[img]') + 5,
+            inputStr.lastIndexOf('[/img]')
           );
+        }, 10);
+      }
+
+      function selectAll() {
+        this.select();
+      }
+
+      function copyOutputFunction() {
+        navigator.clipboard.writeText(document.getElementById('outputBox').value);
       }
     </script>
   </body>
