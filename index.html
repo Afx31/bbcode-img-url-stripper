@@ -36,7 +36,7 @@
     <script>
       function inputFunction() {
         setTimeout(() => {
-          let inputStr = document.getElementById('inputBox').value;
+          var inputStr = document.getElementById('inputBox').value;
           document.getElementById('outputBox').value = inputStr.substring(
             inputStr.indexOf('[img]') + 5,
             inputStr.lastIndexOf('[/img]')
@@ -44,7 +44,10 @@
         }, 10);
       }
 
-      function selectAll() { this.select() }
+      function selectAll() {
+        var input = document.getElementById('inputBox');
+        input.select()
+      }
       function copyOutputFunction() { navigator.clipboard.writeText(document.getElementById('outputBox').value) }
       
       function copyOutputFunctionTagCivic() { navigator.clipboard.writeText(document.getElementById('outputBoxCivic').value) }
