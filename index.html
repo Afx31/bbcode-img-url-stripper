@@ -27,7 +27,13 @@
     <input id="inputBox" name="inputBox" type="text" onclick="selectAll()" onpaste="inputFunction()" class="inputBox">
     <br><br>
     <label for="outputBox">Output:</label>
-    <input id="outputBox" name="outputBox" type="text" onclick="copyOutputFunction()"><br><br>
+    <input id="outputBox" name="outputBox type="text" onclick="copyOutputFunction()"><br><br>
+    <hr />
+    <input id="outputBoxCivicInsert" name="outputBoxTagInsert" class="inputTag" type="text" onclick="copyOutputFunctionTagCivicInsert()" value="![civic](">
+    <input id="outputBoxEf9Insert" name="outputBoxTagInsert" class="inputTag" type="text" onclick="copyOutputFunctionTagEf9Insert()" value="![ef9](">
+    <input id="outputBoxWagoInsert" name="outputBoxTagInsert" class="inputTag" type="text" onclick="copyOutputFunctionTagWagoInsert()" value="![wago](">
+    <input id="outputBoxFrogoInsert" name="outputBoxTagInsert" class="inputTag" type="text" onclick="copyOutputFunctionTagFrogoInsert()" value="![frogo](">
+    <hr />
     <input id="outputBoxCivic" name="outputBoxTag" class="inputTag" type="text" onclick="copyOutputFunctionTagCivic()" value="![civic]()">
     <input id="outputBoxEf9" name="outputBoxTag" class="inputTag" type="text" onclick="copyOutputFunctionTagEf9()" value="![ef9]()">
     <input id="outputBoxWago" name="outputBoxTag" class="inputTag" type="text" onclick="copyOutputFunctionTagWago()" value="![wago]()">
@@ -48,12 +54,26 @@
         var input = document.getElementById('inputBox');
         input.select()
       }
+
       function copyOutputFunction() { navigator.clipboard.writeText(document.getElementById('outputBox').value) }
-      
+
+      ///////////
       function copyOutputFunctionTagCivic() { navigator.clipboard.writeText(document.getElementById('outputBoxCivic').value) }
       function copyOutputFunctionTagEf9() { navigator.clipboard.writeText(document.getElementById('outputBoxEf9').value) }
       function copyOutputFunctionTagWago() { navigator.clipboard.writeText(document.getElementById('outputBoxWago').value) }
       function copyOutputFunctionTagFrogo() { navigator.clipboard.writeText(document.getElementById('outputBoxFrogo').value) }
+
+      ///////////
+      function copyOutputFunctionTagCivicInsert() { navigator.clipboard.writeText(document.getElementById('outputBoxCivicInsert').value) }
+      function copyOutputFunctionTagEf9Insert() { navigator.clipboard.writeText(document.getElementById('outputBoxEf9Insert').value) }
+      function copyOutputFunctionTagWagoInsert() { navigator.clipboard.writeText(document.getElementById('outputBoxWagoInsert').value) }
+      function copyOutputFunctionTagFrogoInsert() { navigator.clipboard.writeText(document.getElementById('outputBoxFrogoInsert').value) }
+
+      function copyOutputFunctionTagWagoInsert() {
+        var tagValue = document.getElementById('outputBoxWagoInsert').value;
+        var outputValue = document.getElementById('outputBox').value + ")";
+        navigator.clipboard.writeText(tagValue + outputValue);
+      }
     </script>
   </body>
 </html>
