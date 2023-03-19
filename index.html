@@ -64,13 +64,23 @@
       function copyOutputFunctionTagFrogo() { navigator.clipboard.writeText(document.getElementById('outputBoxFrogo').value) }
 
       ///////////
-      function copyOutputFunctionTagCivicInsert() { navigator.clipboard.writeText(document.getElementById('outputBoxCivicInsert').value) }
-      function copyOutputFunctionTagEf9Insert() { navigator.clipboard.writeText(document.getElementById('outputBoxEf9Insert').value) }
-      function copyOutputFunctionTagWagoInsert() { navigator.clipboard.writeText(document.getElementById('outputBoxWagoInsert').value) }
-      function copyOutputFunctionTagFrogoInsert() { navigator.clipboard.writeText(document.getElementById('outputBoxFrogoInsert').value) }
-
+      function copyOutputFunctionTagCivicInsert() {
+        var tagValue = document.getElementById('outputBoxCivicInsert').value;
+        var outputValue = document.getElementById('outputBox').value + ")";
+        navigator.clipboard.writeText(tagValue + outputValue);
+      }
+      function copyOutputFunctionTagEf9Insert() {
+        var tagValue = document.getElementById('outputBoxEf9Insert').value;
+        var outputValue = document.getElementById('outputBox').value + ")";
+        navigator.clipboard.writeText(tagValue + outputValue);
+      }
       function copyOutputFunctionTagWagoInsert() {
         var tagValue = document.getElementById('outputBoxWagoInsert').value;
+        var outputValue = document.getElementById('outputBox').value + ")";
+        navigator.clipboard.writeText(tagValue + outputValue);
+      }
+      function copyOutputFunctionTagFrogoInsert() {
+        var tagValue = document.getElementById('outputBoxFrogoInsert').value;
         var outputValue = document.getElementById('outputBox').value + ")";
         navigator.clipboard.writeText(tagValue + outputValue);
       }
